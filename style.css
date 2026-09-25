@@ -1,0 +1,70 @@
+/* Custom focus styling for accessibility */
+*:focus-visible {
+    outline: 2px solid #0284c7 !important;
+    outline-offset: 3px !important;
+}
+
+@media (max-width: 767px) {
+    .backdrop-blur-md {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+    main > section:not(#hero),
+    footer {
+        content-visibility: auto;
+        contain-intrinsic-size: 700px;
+    }
+}
+
+/* Print styling for ATS view optimization */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #ats-modal {
+        display: block !important;
+        position: static !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    #ats-modal > div {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        border: 0 !important;
+        box-shadow: none !important;
+    }
+
+    #ats-printable-area {
+        display: block !important;
+    }
+
+    #ats-printable-area,
+    #ats-printable-area * {
+        visibility: visible !important;
+    }
+
+    #ats-printable-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        color: #000 !important;
+        background: #fff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
+
+    #ats-printable-area .grid {
+        display: grid !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+}

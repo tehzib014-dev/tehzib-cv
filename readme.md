@@ -47,7 +47,10 @@ This portfolio is built as a single-page modern web application designed to show
 
 ```text
 /
-├── index.html       # Single-file entry point containing HTML, CSS configuration, and JS scripts
+├── index.html       # Page structure and Tailwind configuration
+├── style.css        # Custom focus and print styles
+├── script.js        # UI behavior and profile data binding
+├── constants.js     # Centralized public profile/contact configuration
 └── README.md        # Project documentation and setup instructions
 ```
 
@@ -100,12 +103,14 @@ This website can be hosted for free on various static site hosting platforms:
 
 ### Updating Personal Information
 
-All text, links, and contact details are organized directly within `index.html`:
+Profile and contact configuration is centralized in `constants.js`:
 
-- **Contact Info & Social Links:** Update email, phone number, LinkedIn, and GitHub links in the `#hero` and `footer` sections.
+- **Contact Info & Social Links:** Update the `profile` object in `constants.js`. The values are applied to the hero, footer, and ATS resume view by `script.js`.
 - **Projects:** Modify project titles, descriptions, and repository URLs inside the `#projects` section.
 - **Skills:** Add or remove technical skills in the `#skills` section. Ensure `data-category` attributes match the filter categories if adding new skill cards.
 - **ATS Resume Content:** Update the printable plain text content inside `#ats-printable-area` to mirror any changes made to your primary resume.
+
+> Note: `constants.js` is loaded in the browser, so it is suitable for public configuration only. Never place passwords, API keys, or other private secrets in it.
 
 ---
 
